@@ -19,5 +19,7 @@ mod multi_gas_pool;
 mod validation;
 
 pub use blocklist::CurrencyBlocklist;
-pub use multi_gas_pool::MultiGasPool;
-pub use validation::CeloPoolValidator;
+pub use multi_gas_pool::{FeeCurrency, MultiGasPool};
+pub use validation::{
+    compare_value, is_currency_allowed, CeloPoolValidator, ExchangeRate, ExchangeRates,
+};
