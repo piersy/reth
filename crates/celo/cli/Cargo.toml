@@ -1,0 +1,27 @@
+[package]
+name = "reth-celo-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Celo CLI chain specification parser for reth."
+
+[lints]
+workspace = true
+
+[dependencies]
+# reth
+reth-cli.workspace = true
+reth-celo-chainspec = { path = "../chainspec" }
+
+# misc
+eyre.workspace = true
+
+[dev-dependencies]
+reth-chainspec.workspace = true
+reth-celo-forks = { path = "../hardforks" }
+
+[features]
+default = []

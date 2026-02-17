@@ -1,0 +1,42 @@
+[package]
+name = "reth-celo"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Celo execution client built on reth."
+default-run = "reth-celo"
+
+[[bin]]
+name = "reth-celo"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+# reth
+reth-ethereum-cli.workspace = true
+reth-cli-util.workspace = true
+reth-celo-node = { path = "../../crates/celo/node" }
+reth-celo-cli = { path = "../../crates/celo/cli" }
+reth-celo-chainspec = { path = "../../crates/celo/chainspec" }
+reth-celo-evm = { path = "../../crates/celo/evm" }
+reth-celo-consensus = { path = "../../crates/celo/consensus" }
+
+# misc
+clap.workspace = true
+tracing.workspace = true
+
+[features]
+default = ["jemalloc"]
+jemalloc = [
+    "reth-cli-util/jemalloc",
+]
+jemalloc-prof = [
+    "reth-cli-util/jemalloc",
+    "reth-cli-util/jemalloc-prof",
+]
+js-tracer = ["reth-celo-node/js-tracer"]

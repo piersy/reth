@@ -4545,6 +4545,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "hex-literal"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6fe2267d4ed49bc07b63801559be28c718ea06c4738b7a03c94df7386d2cde46"
+
+[[package]]
 name = "hickory-proto"
 version = "0.25.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7673,6 +7679,159 @@ dependencies = [
  "shlex",
  "tokio",
  "tracing",
+]
+
+[[package]]
+name = "reth-celo"
+version = "1.11.0"
+dependencies = [
+ "clap",
+ "reth-celo-chainspec",
+ "reth-celo-cli",
+ "reth-celo-consensus",
+ "reth-celo-evm",
+ "reth-celo-node",
+ "reth-cli-util",
+ "reth-ethereum-cli",
+ "tracing",
+]
+
+[[package]]
+name = "reth-celo-chainspec"
+version = "1.11.0"
+dependencies = [
+ "alloy-chains",
+ "alloy-consensus",
+ "alloy-eips",
+ "alloy-evm",
+ "alloy-genesis",
+ "alloy-primitives",
+ "eyre",
+ "hex-literal",
+ "once_cell",
+ "reth-celo-forks",
+ "reth-chainspec",
+ "reth-network-peers",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "reth-celo-cli"
+version = "1.11.0"
+dependencies = [
+ "eyre",
+ "reth-celo-chainspec",
+ "reth-celo-forks",
+ "reth-chainspec",
+ "reth-cli",
+]
+
+[[package]]
+name = "reth-celo-consensus"
+version = "1.11.0"
+dependencies = [
+ "reth-celo-chainspec",
+ "reth-consensus",
+ "reth-ethereum-consensus",
+ "reth-ethereum-primitives",
+ "reth-execution-types",
+ "reth-primitives-traits",
+]
+
+[[package]]
+name = "reth-celo-evm"
+version = "1.11.0"
+dependencies = [
+ "alloy-consensus",
+ "reth-celo-chainspec",
+ "reth-chainspec",
+ "reth-evm",
+ "reth-evm-ethereum",
+ "revm",
+]
+
+[[package]]
+name = "reth-celo-forks"
+version = "1.11.0"
+dependencies = [
+ "alloy-hardforks 0.4.7",
+ "reth-ethereum-forks",
+]
+
+[[package]]
+name = "reth-celo-node"
+version = "1.11.0"
+dependencies = [
+ "alloy-eips",
+ "alloy-network",
+ "alloy-rpc-types-engine",
+ "eyre",
+ "reth-celo-chainspec",
+ "reth-celo-consensus",
+ "reth-celo-evm",
+ "reth-celo-forks",
+ "reth-chainspec",
+ "reth-engine-primitives",
+ "reth-ethereum-engine-primitives",
+ "reth-ethereum-payload-builder",
+ "reth-ethereum-primitives",
+ "reth-evm",
+ "reth-network",
+ "reth-node-api",
+ "reth-node-builder",
+ "reth-node-ethereum",
+ "reth-provider",
+ "reth-rpc",
+ "reth-rpc-api",
+ "reth-rpc-builder",
+ "reth-rpc-eth-api",
+ "reth-rpc-eth-types",
+ "reth-rpc-server-types",
+ "reth-tracing",
+ "reth-transaction-pool",
+ "revm",
+]
+
+[[package]]
+name = "reth-celo-payload-builder"
+version = "1.11.0"
+dependencies = [
+ "alloy-consensus",
+ "alloy-eips",
+ "alloy-evm",
+ "alloy-primitives",
+ "alloy-rpc-types-engine",
+ "eyre",
+ "reth-basic-payload-builder",
+ "reth-celo-chainspec",
+ "reth-celo-evm",
+ "reth-celo-forks",
+ "reth-chain-state",
+ "reth-chainspec",
+ "reth-errors",
+ "reth-ethereum-payload-builder",
+ "reth-ethereum-primitives",
+ "reth-evm",
+ "reth-payload-builder",
+ "reth-payload-builder-primitives",
+ "reth-payload-primitives",
+ "reth-payload-util",
+ "reth-primitives-traits",
+ "reth-provider",
+ "reth-revm",
+ "reth-storage-api",
+ "reth-transaction-pool",
+ "revm",
+ "tracing",
+]
+
+[[package]]
+name = "reth-celo-pool"
+version = "1.11.0"
+dependencies = [
+ "alloy-primitives",
+ "parking_lot",
 ]
 
 [[package]]

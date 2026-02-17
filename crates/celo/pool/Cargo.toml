@@ -1,0 +1,25 @@
+[package]
+name = "reth-celo-pool"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Celo transaction pool validation with fee currency support."
+
+[lints]
+workspace = true
+
+[dependencies]
+# ethereum
+alloy-primitives.workspace = true
+
+# misc
+parking_lot.workspace = true
+
+[dev-dependencies]
+alloy-primitives = { workspace = true, features = ["rand"] }
+
+[features]
+default = []

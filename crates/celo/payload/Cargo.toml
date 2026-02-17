@@ -1,0 +1,51 @@
+[package]
+name = "reth-celo-payload-builder"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+description = "Celo payload builder for reth, supporting fee currency transactions."
+
+[lints]
+workspace = true
+
+[dependencies]
+# reth
+reth-basic-payload-builder.workspace = true
+reth-chainspec.workspace = true
+reth-chain-state.workspace = true
+reth-errors.workspace = true
+reth-ethereum-payload-builder.workspace = true
+reth-ethereum-primitives.workspace = true
+reth-evm.workspace = true
+reth-payload-builder.workspace = true
+reth-payload-builder-primitives.workspace = true
+reth-payload-primitives.workspace = true
+reth-payload-util.workspace = true
+reth-primitives-traits.workspace = true
+reth-provider.workspace = true
+reth-revm = { workspace = true, features = ["std"] }
+reth-storage-api.workspace = true
+reth-transaction-pool.workspace = true
+reth-celo-chainspec = { path = "../chainspec" }
+reth-celo-evm = { path = "../evm" }
+reth-celo-forks = { path = "../hardforks" }
+
+# ethereum
+alloy-consensus.workspace = true
+alloy-eips.workspace = true
+alloy-evm.workspace = true
+alloy-primitives.workspace = true
+alloy-rpc-types-engine.workspace = true
+
+# revm
+revm.workspace = true
+
+# misc
+eyre.workspace = true
+tracing.workspace = true
+
+[features]
+default = []

@@ -12,6 +12,15 @@ members = [
     "bin/reth-bench/",
     "bin/reth-bench-compare/",
     "bin/reth/",
+    "bin/reth-celo/",
+    "crates/celo/hardforks/",
+    "crates/celo/chainspec/",
+    "crates/celo/evm/",
+    "crates/celo/consensus/",
+    "crates/celo/payload/",
+    "crates/celo/pool/",
+    "crates/celo/node/",
+    "crates/celo/cli/",
     "crates/storage/rpc-provider/",
     "crates/chain-state/",
     "crates/chainspec/",
@@ -319,6 +328,16 @@ incremental = false
 [workspace.dependencies]
 # reth
 reth = { path = "bin/reth" }
+# celo
+reth-celo = { path = "bin/reth-celo" }
+reth-celo-forks = { path = "crates/celo/hardforks" }
+reth-celo-chainspec = { path = "crates/celo/chainspec" }
+reth-celo-evm = { path = "crates/celo/evm" }
+reth-celo-consensus = { path = "crates/celo/consensus" }
+reth-celo-payload-builder = { path = "crates/celo/payload" }
+reth-celo-pool = { path = "crates/celo/pool" }
+reth-celo-node = { path = "crates/celo/node" }
+reth-celo-cli = { path = "crates/celo/cli" }
 reth-storage-rpc-provider = { path = "crates/storage/rpc-provider" }
 reth-basic-payload-builder = { path = "crates/payload/basic" }
 reth-bench = { path = "bin/reth-bench" }
