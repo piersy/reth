@@ -105,6 +105,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 
 [[package]]
+name = "alloy-celo-evm"
+version = "1.0.0"
+source = "git+https://github.com/celo-org/celo-kona?branch=claude%2Fport-celo-to-reth-ugTnI#fdb6b62a71b6d5ac882bfe1ceeeeaf0e91b2db8b"
+dependencies = [
+ "alloy-consensus",
+ "alloy-evm",
+ "alloy-op-evm",
+ "alloy-primitives",
+ "celo-alloy-consensus",
+ "celo-revm",
+ "op-alloy-consensus",
+ "op-revm",
+ "revm",
+ "spin 0.10.0",
+]
+
+[[package]]
 name = "alloy-chains"
 version = "0.2.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -437,6 +454,24 @@ dependencies = [
  "thiserror 2.0.18",
  "tracing",
  "url",
+]
+
+[[package]]
+name = "alloy-op-evm"
+version = "0.27.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "874bfd6cacd006d05e70560f3af7faa670e31166203f9ba14fae4b169227360b"
+dependencies = [
+ "alloy-consensus",
+ "alloy-eips",
+ "alloy-evm",
+ "alloy-op-hardforks",
+ "alloy-primitives",
+ "auto_impl",
+ "op-alloy",
+ "op-revm",
+ "revm",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
@@ -2121,6 +2156,42 @@ dependencies = [
 ]
 
 [[package]]
+name = "celo-alloy-consensus"
+version = "1.0.0"
+source = "git+https://github.com/celo-org/celo-kona?branch=claude%2Fport-celo-to-reth-ugTnI#fdb6b62a71b6d5ac882bfe1ceeeeaf0e91b2db8b"
+dependencies = [
+ "alloy-consensus",
+ "alloy-eips",
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-rpc-types-eth",
+ "op-alloy-consensus",
+]
+
+[[package]]
+name = "celo-revm"
+version = "1.0.0"
+source = "git+https://github.com/celo-org/celo-kona?branch=claude%2Fport-celo-to-reth-ugTnI#fdb6b62a71b6d5ac882bfe1ceeeeaf0e91b2db8b"
+dependencies = [
+ "alloy-eips",
+ "alloy-evm",
+ "alloy-op-evm",
+ "alloy-primitives",
+ "alloy-sol-types",
+ "auto_impl",
+ "celo-alloy-consensus",
+ "lazy_static",
+ "op-alloy-consensus",
+ "op-revm",
+ "revm",
+ "revm-context-interface",
+ "serde",
+ "spin 0.10.0",
+ "thiserror 2.0.18",
+ "tracing",
+]
+
+[[package]]
 name = "cesu8"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3129,7 +3200,7 @@ dependencies = [
  "libc",
  "option-ext",
  "redox_users 0.5.2",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -3458,7 +3529,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -4781,7 +4852,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2 0.6.2",
+ "socket2 0.5.10",
  "tokio",
  "tower-service",
  "tracing",
@@ -5151,7 +5222,7 @@ checksum = "3640c1c38b8e4e43584d8df18be5fc6b0aa314ce6ebf51b53313d4306cca8e46"
 dependencies = [
  "hermit-abi",
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -5509,6 +5580,9 @@ name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
+dependencies = [
+ "spin 0.9.8",
+]
 
 [[package]]
 name = "leb128fmt"
@@ -6117,7 +6191,7 @@ version = "0.50.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -7090,7 +7164,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash",
  "rustls",
- "socket2 0.6.2",
+ "socket2 0.5.10",
  "thiserror 2.0.18",
  "tokio",
  "tracing",
@@ -7127,9 +7201,9 @@ dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2 0.6.2",
+ "socket2 0.5.10",
  "tracing",
- "windows-sys 0.60.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -7743,7 +7817,11 @@ dependencies = [
 name = "reth-celo-evm"
 version = "1.11.0"
 dependencies = [
+ "alloy-celo-evm",
  "alloy-consensus",
+ "alloy-evm",
+ "celo-revm",
+ "op-revm",
  "reth-celo-chainspec",
  "reth-chainspec",
  "reth-evm",
@@ -11246,7 +11324,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -11924,6 +12002,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "spin"
+version = "0.9.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67"
+
+[[package]]
+name = "spin"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d5fe4ccb98d9c292d56fec89a5e07da7fc4cf0dc11e156b41793132775d3e591"
+dependencies = [
+ "lock_api",
+]
+
+[[package]]
 name = "spki"
 version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12095,7 +12188,7 @@ dependencies = [
  "getrandom 0.4.1",
  "once_cell",
  "rustix",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -12793,7 +12886,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c5f7c95348f20c1c913d72157b3c6dee6ea3e30b3d19502c5a7f6d3f160dacbf"
 dependencies = [
  "cc",
- "windows-targets 0.52.6",
+ "windows-targets 0.48.5",
 ]
 
 [[package]]
@@ -13382,7 +13475,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]

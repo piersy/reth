@@ -516,6 +516,11 @@ op-alloy-consensus = { version = "0.23.1", default-features = false }
 op-alloy-rpc-jsonrpsee = { version = "0.23.1", default-features = false }
 op-alloy-flz = { version = "0.13.1", default-features = false }
 
+# celo
+celo-revm = { git = "https://github.com/celo-org/celo-kona", branch = "claude/port-celo-to-reth-ugTnI", default-features = false }
+alloy-celo-evm = { git = "https://github.com/celo-org/celo-kona", branch = "claude/port-celo-to-reth-ugTnI", default-features = false }
+celo-alloy-consensus = { git = "https://github.com/celo-org/celo-kona", branch = "claude/port-celo-to-reth-ugTnI", default-features = false }
+
 # misc
 either = { version = "1.15.0", default-features = false }
 arrayvec = { version = "0.7.6", default-features = false }

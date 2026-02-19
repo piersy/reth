@@ -16,6 +16,10 @@ workspace = true
 reth-celo-chainspec = { path = "../chainspec" }
 reth-evm-ethereum = { workspace = true, features = ["std"] }
 
+# celo
+celo-revm = { workspace = true, features = ["std"] }
+alloy-celo-evm = { workspace = true, features = ["std"] }
+
 # revm
 revm.workspace = true
 
@@ -24,11 +28,15 @@ reth-evm.workspace = true
 reth-chainspec.workspace = true
 reth-celo-chainspec = { path = "../chainspec" }
 alloy-consensus.workspace = true
+alloy-evm.workspace = true
+op-revm.workspace = true
 
 [features]
 default = ["std"]
 std = [
     "revm/std",
+    "celo-revm/std",
+    "alloy-celo-evm/std",
 ]
 test-utils = [
     "reth-evm-ethereum/test-utils",
